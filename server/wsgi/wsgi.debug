@@ -1,0 +1,22 @@
+#!/var/www/html/settings/python3.7/bin/python3.7
+import sys
+import site
+import os
+
+
+mode = 'debug'
+
+app_dir = f'D:/Githubs/svi_hrm'
+
+site.addsitedir('/var/www/html/settings/python3.7/lib/python3.7/site-packages')
+sys.path.insert(0, f'{app_dir}/server/app_config/debug')
+sys.path.insert(0, f'{app_dir}/server')
+
+
+# Set environment
+os.environ['ENV_MODE'] = mode
+os.environ['APP_DIR'] = app_dir
+
+from app import app as application
+
+application.run(port=8080, debug=True)

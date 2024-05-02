@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito-Italic-VariableFont_wght"),
+    url("./fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal; /* or use font-weight: bold; for bold font */
+  font-style: normal;
+}
+
+/* Use the custom font in your styles */
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* tailwind Function & Derectives */
+@layer components {
+  .btn {
+    @apply text-xs 
+         py-2 px-4 
+         rounded-2xl
+         duration-300
+         border;
+  }
+
+  /* Button */
+  .btn-primary {
+    @apply btn
+        bg-primary-600/90 hover:bg-primary-500          
+         border-primary-600/80 hover:border-primary-500 hover:scale-105
+         text-light  duration-300;
+  }
+
+  .btn-disabled {
+    @apply bg-primary-300 border-primary-300 hover:border-primary-300
+        text-light cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply btn bg-light hover:bg-primary-100/80
+        border border-primary-500
+        text-primary-500;
+  }
+
+  /* Input */
+  .input {
+    @apply p-3 
+            outline-none 
+            rounded-lg 
+            border  
+            border-slate-300
+            focus:border-slate-500 
+            text-xs
+            text-secondary-500
+            duration-300
+            placeholder:text-xs;
+  }
+
+  /* Label */
+  .label {
+    @apply cursor-pointer
+            text-xs
+            text-secondary-500
+            capitalize                                           
+            duration-500
+            select-none;
+  }
+
+  /* Div wrapper action buttons on modal */
+
+  .organization-item {
+    @apply border inline-block p-1 rounded-md select-none 
+    cursor-pointer 
+    border-primary-400
+    duration-300 hover:translate-y-1 hover:scale-105 hover:bg-primary-100;
+  }
+
+  .action-btn-wrapper {
+    @apply flex justify-end items-center gap-2 py-5;
+  }
+
+  /* Organization structures */
+  .avatar-wrapper {
+    @apply w-10 h-10 rounded-full overflow-hidden;
+  }
+}
+
+/* remove POWERED BY JODIT in Editor Component */
+.jodit-status-bar-link {
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.425rem;
+  height: 0.425rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f8f8f8;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 5px;
+  height: 120px;
+  max-height: 12p0x;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#chart-container,
+#table-container {
+  min-height: 20rem;
+  max-height: 20rem;
+}
+
+#chart-container td.pvtVals,
+#chart-container .pvtRenderers,
+#chart-container td.pvtAxisContainer,
+#table-container > .pvtUi > tbody > tr:first-child {
+  display: none;
+}
+
+#table-container td.pvtVals,
+#table-container .pvtRenderers,
+#table-container td.pvtAxisContainer,
+#table-container > .pvtUi > tbody > tr:first-child {
+  display: none;
+}
+
+#table-container .chart,
+#table-container .pvtUi,
+#table-container .pvtTable {
+  width: 100%;
+}
+
+#table-container .pvtTable .modebar > .modebar-group:nth-child(2),
+.modebar > .modebar-group:nth-child(3) {
+  display: none !important;
+}
+
+table.pvtTable {
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+}
+
+table.pvtTable thead tr th,
+table.pvtTable tbody tr th {
+  background-color: #ebf0f8;
+  border-bottom: 1px solid #c8d4e3;
+  font-size: 8pt;
+  padding: 5px;
+}
+
+.modebar > .modebar-group:nth-child(2),
+.modebar > .modebar-group:nth-child(3) {
+  display: none !important;
+}
+
+.modebar > .modebar-group:nth-child(1) {
+  display: block !important;
+}
+
+#symbol {
+  display: none;
+}
+
+text.gtitle {
+  font-size: 0.8rem !important;
+  color: red !important;
+}
+
+/* Custom header toolbar of Full Calendar  - time-off */

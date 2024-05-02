@@ -1,0 +1,15 @@
+#!/var/www/html/settings/python3.7/bin/python3.7
+import sys
+import site
+import os
+
+
+mode = 'prod'
+
+app_dir = f'/var/www/html/hrm/v0p1/{mode}'
+
+site.addsitedir('/var/www/html/settings/python3.7/lib/python3.7/site-packages')
+sys.path.insert(0, f'{app_dir}/server/app_config/{mode}')
+sys.path.insert(0, f'{app_dir}/server')
+
+from app import app as application
